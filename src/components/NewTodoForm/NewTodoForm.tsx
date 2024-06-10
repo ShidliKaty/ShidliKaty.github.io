@@ -1,5 +1,5 @@
 import { FormEvent, useRef } from 'react';
-import { useTodos } from '../context/useTodos';
+import { useTodos } from '../../context/useTodos';
 
 export const NewTodoForm = () => {
     const { addTodo } = useTodos();
@@ -8,6 +8,8 @@ export const NewTodoForm = () => {
 
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
+
+        console.log('Form submitted'); // Добавляем лог для отладки
 
         const name = todoName.current?.value;
 
@@ -18,9 +20,15 @@ export const NewTodoForm = () => {
         if (todoName.current) {
             todoName.current.value = '';
         }
+
+        console.log('Todo added:', name); // Добавляем лог для отладки
     }
     return (
-        <form className="new-todo-form" onSubmit={handleSubmit}>
+        <form
+            className="new-todo-form"
+            onSubmit={handleSubmit}
+            data-testid="new-todo-form"
+        >
             <input
                 type="text"
                 placeholder="What needs to be done?"

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useTodos } from '../context/useTodos';
+import { useTodos } from '../../context/useTodos';
 
 export const TodoFilter = () => {
     const { todos, showActive, showCompleted, showAll, clearCompleted } =

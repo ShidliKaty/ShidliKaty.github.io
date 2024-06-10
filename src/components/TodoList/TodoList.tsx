@@ -1,5 +1,5 @@
-import { useTodos } from '../context/useTodos';
-import { TodoItem } from './TodoItem';
+import { useTodos } from '../../context/useTodos';
+import { TodoItem } from '../TodoItem';
 
 export const TodoList = () => {
     const { todos } = useTodos();
